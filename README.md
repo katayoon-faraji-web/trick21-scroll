@@ -1,5 +1,5 @@
 # tric21-scroll
-- [Demo Project](https://katayoon-faraji-web.github.io/trick20-cardDetails/)
+- [Demo Project](https://katayoon-faraji-web.github.io/tric21-scroll/)
 
 - Developed by katayoon faraji
 
