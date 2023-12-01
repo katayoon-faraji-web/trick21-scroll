@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="css/output.css">
+    <style>
+        *{
+            padding: 0;margin: 0;box-sizing: border-box;
+          
+        }
+    
+    </style>
+</head>
+<body class="font-primary">
+
+    <main id="mn" class="w-full h-[100vh] overflow-y-scroll">
+
+        <section id="holder" class="w-full">
+
+            <section id="first" class="w-full h-[100vh] bg-[url('../img/bg-header.jpg')] flex justify-center items-center text-[140px] fixed top-0 -z-10 font-bold text-white">HEADER</section>
+
+            <section id="second" class=" w-full h-[90vh] bg-slate-200 text-zinc-400 font-bold flex left-0 p-0 m-0 top-[100vh] relative justify-center items-center text-[140px] z-10">CONTENT</section> 
+
+            <section id="third" class="fixed -z-10 w-full h-[70vh] bg-slate-700 text-white font-bold text-[140px] flex justify-center items-center -bottom-[100%]">FOOTER</section>
+
+        </section>
+
+    </main>
+
+    <script>
+        let mn = document.getElementById('mn')
+        let firstbox = document.getElementById('first')
+        let secondbox = document.getElementById('second')
+        let thirdbox = document.getElementById('third')
+        let holder = document.getElementById('holder')
+        let scrollheight = mn.scrollHeight
+        let h_header = firstbox.clientHeight
+        let h_content = secondbox.clientHeight
+        let h_footer = thirdbox.clientHeight
+        let h_holder  = h_header + h_content + h_footer 
+        holder.style.height = `${h_holder}px`
+        mn.addEventListener('scroll',()=>{
+            let sctop = mn.scrollTop
+            if(sctop> (scrollheight-751)){
+                console.log('raft');
+                thirdbox.style.bottom = 0 
+            }
+            else{
+                thirdbox.style.bottom = '-100%' 
+            }
+        })
+    </script>
+    
+</body>
+</html>
